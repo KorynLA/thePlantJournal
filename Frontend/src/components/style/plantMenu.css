@@ -1,0 +1,21 @@
+.plants1 {
+	background-size: cover;
+	background-position: center;
+	min-width: 100%;
+	min-height: 100%;
+	top:-3rem;
+	position: relative;
+}
+
+
+.plantOverlay{
+	position: absolute;
+	right: 10%;
+	left: 10%;
+	top: 5%;
+	text-align: center;
+}
+
+.plantList {
+	background-color: #f2f2f2;
+}

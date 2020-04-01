@@ -1,0 +1,13 @@
+/**
+Test case to get an alreadt made record with id: 5271cfa0-eac8-11e9-9c5e-bd174dd92b67
+**/
+{
+  "pathParameters": {
+    "id": "5271cfa0-eac8-11e9-9c5e-bd174dd92b67"
+  },
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
+    }
+  }
+}

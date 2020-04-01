@@ -1,0 +1,38 @@
+.homeContainer{
+	margin-top: 10%;
+}
+p {
+	text-align: center;
+	color: #999;
+	padding-top:80px 0;
+	font-family: "Lato";
+	font-size: 25px;
+	font-weight: 900;
+}
+.well {
+	padding-top: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 50%;
+	background-color: none;
+	text-decoration: none;
+	list-style: none;
+}
+
+.wrapper {
+	background-color: red;
+}
+
+.plant {
+	margin: auto auto;
+}
+
+body {
+    background-color: #F8F8F8;
+}
+
+.homeHeader {
+	margin: auto auto;
+	padding-top: 5px;
+	text-align: center;
+}

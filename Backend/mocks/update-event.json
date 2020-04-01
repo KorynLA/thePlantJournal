@@ -1,0 +1,14 @@
+/**
+Test case to update a record with id 729a92c0-f429-11e9-9a11-2dd2f7cc8641
+**/
+{
+  "body": "{\"content\":\"new world\"}",
+  "pathParameters": {
+    "id": "729a92c0-f429-11e9-9a11-2dd2f7cc8641"
+  },
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "koryn629@gmail.com"
+    }
+  }
+}

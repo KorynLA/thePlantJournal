@@ -1,0 +1,10 @@
+/**
+Test case to retrieve all records in a database
+**/
+{
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.updateFile {
+	padding-left:40%;
+	padding-right:40%;
+}
+
+.plants {
+	text-align: center;
+	padding-top: 2rem;
+}
+
+.plantGroup a {
+	position:left;
+	font-size: 20px;
+	position: center;
+	display: inline-block;
+}
+
+.plantGroup {
+	text-align: center;
+}

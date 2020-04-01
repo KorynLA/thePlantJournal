@@ -1,0 +1,10 @@
+.navbar, .navbar-default {
+    background-image: linear-gradient(to bottom,#F8F8F8 0,#FFFFFF 100%); 
+   	padding-bottom: 0;
+   	margin-bottom: 0;
+}
+.plantContainer {
+	background-color:none;
+	margin-bottom: 0;
+}
+

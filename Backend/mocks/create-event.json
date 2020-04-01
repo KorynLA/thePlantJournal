@@ -1,0 +1,11 @@
+/**
+Test case to create a new record 
+**/
+{
+  "body": "{\"content\":\"hello world\",\"attachment\":\"hello.jpg\", \"name\":\"bob\"}",
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
+    }
+  }
+}
