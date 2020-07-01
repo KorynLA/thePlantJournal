@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import "./style/plantMenu.css";
 import { LinkContainer } from "react-router-bootstrap";
-import { ListGroup, ListGroupItem, CardGroup, Button, Image, Card, CardColumns } from "react-bootstrap";
+import { Button, Image, CardColumns, Card } from "react-bootstrap";
 import { API } from "aws-amplify";
 import succulent from "./style/succulent2.jpg"
-
+import renderLander from "./renderLander.js"
 /***
 Function that loads plants if user is logged in
 ***/
@@ -53,25 +53,6 @@ export default function View(props) {
       ) : ( 
         <br></br>
       )
-    );
-  }
-
-  /***
-  Function called when user is not logged in
-  ***/
-  function renderLander() {
-    return (
-		<div className="homeContainer">
-			<p>Login to view</p>
-  			<div className="signup">
-  				<LinkContainer to="/signup">
-              		<Button block bsSize="large">Signup</Button>
-            	</LinkContainer>
-            	<LinkContainer to="/login">
-           			<Button block bsSize="large">Login</Button>
-           		</LinkContainer>
-  			</div>
-		</div>
     );
   }
 
