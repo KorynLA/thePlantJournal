@@ -5,15 +5,11 @@ import config from "../config";
 import "./style/addPlant.css";
 //needed to connect to backend AWS database
 import { API } from "aws-amplify";
-//needed to connect S3 bucket backend
-import { s3Upload } from "./awsFile";
 
 /***
 Function to create a new entry
 ***/
 function AddPlant(props) {
-    //attachment from user
-    const file = useRef(null);
     const [content, setContent] = useState("");
     const [sunlight, setSunlight] = useState("");
     const [water, setWater] = useState("");
@@ -22,10 +18,6 @@ function AddPlant(props) {
     const [typeP, setType] = useState("");
     const [alive, setAlive] = useState("true");
     
-    function handleFileChange(event) {
-        file.current = event.target.files[0];
-    }
-
     function createPlant(plant) {
         console.log(plant);
         return API.post("plantjournal", "/journal", {
@@ -35,16 +27,8 @@ function AddPlant(props) {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        if (file.current && file.current.size > config.MAX_ATTACHMENT_SIZE) {
-            alert(
-                `Please pick a file smaller than ${config.MAX_ATTACHMENT_SIZE /
-                1000000} MB.`
-            );
-            return;
-        }
         try {
-            const attachment = file.current ? await s3Upload(file.current) : null;
-            await createPlant({ nameP, typeP, birthday, sunlight, water, content, attachment });
+            await createPlant({ nameP, typeP, birthday, sunlight, water, content, alive });
             props.history.push('/plants');
         } catch (e) {
             alert(e);

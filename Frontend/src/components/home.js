@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import "./style/Home.css";
 import { Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";

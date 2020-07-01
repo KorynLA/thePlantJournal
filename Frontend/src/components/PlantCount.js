@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link, withRouter } from "react-router-dom";
-import { LinkContainer } from "react-router-bootstrap";
-import { Navbar, Nav, NavItem, NavDropdown } from "react-bootstrap";
+import { withRouter } from "react-router-dom";
+import { Navbar, NavDropdown } from "react-bootstrap";
 import Routes from "./routes";
 import './style/plantCount.css';
 import { Auth } from 'aws-amplify';

@@ -1,12 +1,10 @@
-import React, { useRef, useState, useEffect } from "react";
-import { API, Storage } from "aws-amplify";
+import React, { useState, useEffect } from "react";
+import { API } from "aws-amplify";
 import { Form, Button, Col, Row, ButtonGroup } from "react-bootstrap";
 import config from "../config";
-import { s3Upload } from "./awsFile"
 import "./style/plantView.css";
 
 export default function PlantView(props) {
-  const file = useRef(null);
   const [plant, setPlant]= useState(false);
   const [content, setContent] = useState("");
   const [sunlight, setSunlight] = useState("");
@@ -31,11 +29,7 @@ Calls aws-amplify framework to retrieve data for UI
     async function onLoad() {
       try {
         const plant = await loadPlant();
-        const { content, attachment, water, sunlight, nameP, birthday, typeP } = plant;
-
-        if (attachment) {
-          plant.attachmentURL = await Storage.vault.get(attachment);
-        }
+        const { content, water, sunlight, nameP, birthday, typeP, alive } = plant;
 
         //update all of the plant data retrieved from GET request
         setContent(content);
@@ -45,6 +39,7 @@ Calls aws-amplify framework to retrieve data for UI
         setWater(water);
         setSunlight(sunlight);
         setPlant(true);
+        setAlive(alive);
         console.log(nameP);
 
       } catch (e) {
@@ -63,20 +58,6 @@ function validateForm() {
 }
 
 /***
-Function to uset filename to be in correct format
-***/
-function formatFilename(str) {
-  return str.replace(/^\w+-/, "");
-}
-
-/***
-Function to update file with file submitted
-***/
-function handleFileChange(event) {
-  file.current = event.target.files[0];
-}
-
-/***
 Calls AWS-amplify to update an entry
 ***/
 function savePlant(plant) {
@@ -90,23 +71,9 @@ function savePlant(plant) {
 Update plant information
 ***/
 async function handleSubmit(event) {
-  let attachment;
 
   event.preventDefault();
-
-  if (file.current && file.current.size > config.MAX_ATTACHMENT_SIZE) {
-    alert(
-      `Please pick a file smaller than ${config.MAX_ATTACHMENT_SIZE /
-        1000000} MB.`
-    );
-    return;
-  }
-
   try {
-    if (file.current) {
-      attachment = await s3Upload(file.current);
-    }
-
     await savePlant({
       nameP,
       typeP,
@@ -114,10 +81,11 @@ async function handleSubmit(event) {
       water,
       birthday,
       content,
-      attachment: attachment || plant.attachment
+      alive
     });
     props.history.push("/plants");
-  } catch (e) {
+  } 
+  catch (e) {
     alert(e);
   }
 }
@@ -142,7 +110,6 @@ async function handleDelete(event) {
   if (!confirmed) {
     return;
   }
-
 
   try {
     await deletePlant();
@@ -213,18 +180,6 @@ return (
             />
           </Col>
         </Form.Group>
-        {plant.attachment && (
-          <Form.Group className="plantGroup">
-              <Form.Control.Static>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={plant.attachmentURL}
-                >
-                  {formatFilename(plant.attachment)}
-                </a>
-              </Form.Control.Static>
-          </Form.Group>
         )}
         <ButtonGroup>
         <br></br>
