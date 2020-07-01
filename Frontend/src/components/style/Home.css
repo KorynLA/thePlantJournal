@@ -9,6 +9,10 @@ p {
 	font-size: 25px;
 	font-weight: 900;
 }
+.buttonContainer {
+	width: 50%;
+	margin: auto auto;
+}
 .well {
 	padding-top: 10px;
 	margin-right: auto;
