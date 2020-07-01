@@ -5,6 +5,7 @@ import config from "../config";
 import "./style/addPlant.css";
 //needed to connect to backend AWS database
 import { API } from "aws-amplify";
+import renderLander from "./renderLander.js";
 
 /***
 Function to create a new entry
@@ -31,7 +32,7 @@ function AddPlant(props) {
             await createPlant({ nameP, typeP, birthday, sunlight, water, content, alive });
             props.history.push('/plants');
         } catch (e) {
-            alert(e);
+            alert(e.toString());
         }
     }
     function renderAdd() {
@@ -84,23 +85,7 @@ function AddPlant(props) {
         </div>
         );
     }
-    function renderLander() {
-        return (
-            <div className="homeContainer">
-                <p>Watch them grow</p>
-                <div className="buttonContainer">
-            <ButtonToolbar>
-                    <LinkContainer to="/signup">
-                  <Button variant="primary" size="lg" block>Signup</Button>
-              </LinkContainer>
-              <LinkContainer to="/login">
-                <Button variant="primary" size="lg" block>Login</Button>
-              </LinkContainer>
-              </ButtonToolbar>
-                </div>
-            </div>
-    );
-  }
+
     return (
         <div className="plantAdd">
             {props.isAuthenticated ? renderAdd() : renderLander()}
