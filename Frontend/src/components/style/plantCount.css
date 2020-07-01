@@ -1,8 +1,5 @@
-.navbar, .navbar-default {
-    background-image: linear-gradient(to bottom,#F8F8F8 0,#FFFFFF 100%); 
-   	padding-bottom: 0;
-   	margin-bottom: 10px;
-}
+.navbar-nav > li > a {padding-top:5px !important; padding-bottom:5px !important;}
+.navbar {min-height:32px !important}
 .plantContainer {
 	background-color:none;
 	margin-bottom: 0;
