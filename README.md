@@ -18,7 +18,7 @@ Allows users to add and update plant data
    - Create a [DynamoDB table](https://aws.amazon.com/getting-started/hands-on/create-nosql-table/)
    - Create a [Cognito User Pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-as-user-directory.html)
       - Cognito provides auhentication and authorization for the users that will be added to the application.
-## Local Deployment'
+## Local Deployment
    - Backend
       - Run: npm install
       - Run: serverless deploy
@@ -26,3 +26,10 @@ Allows users to add and update plant data
      - Run: npm install
      - Run: npm start
 # Tools Used
+  - [React](https://reactjs.org/)
+  - [React Bootstrap](https://react-bootstrap.github.io/)
+  - [React Router]
+  - [Serverless Framework](https://www.serverless.com/)
+  - AWS cloud services
+    - [Cognito](https://aws.amazon.com/cognito/)
+    - [DynamoDB](https://www.dynamodbguide.com/)
