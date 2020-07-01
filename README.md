@@ -1,5 +1,13 @@
 # The Plant Journal
 Allows users to add and update plant data
+# Tools Used
+  - [React](https://reactjs.org/)
+  - [React Bootstrap](https://react-bootstrap.github.io/)
+  - [React Router]
+  - [Serverless Framework](https://www.serverless.com/)
+  - AWS cloud services
+    - [Cognito](https://aws.amazon.com/cognito/)
+    - [DynamoDB](https://www.dynamodbguide.com/)
 # Getting Started
 ## Prerequisites
    - Create an [AWS account](https://aws.amazon.com/account/)
@@ -18,18 +26,18 @@ Allows users to add and update plant data
    - Create a [DynamoDB table](https://aws.amazon.com/getting-started/hands-on/create-nosql-table/)
    - Create a [Cognito User Pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-as-user-directory.html)
       - Cognito provides auhentication and authorization for the users that will be added to the application.
+   - Create [Federeated Identity Pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html)
+     - Allows values inserted into DynamoDB to only be associated with that user
 ## Local Deployment
    - Backend
       - Run: npm install
       - Run: serverless deploy
    - Frontend
+     - Update config.js
+       - API Gateway values are found when deploying the backend
+       - Cognito values are found in the Cognito dashboard
      - Run: npm install
      - Run: npm start
-# Tools Used
-  - [React](https://reactjs.org/)
-  - [React Bootstrap](https://react-bootstrap.github.io/)
-  - [React Router]
-  - [Serverless Framework](https://www.serverless.com/)
-  - AWS cloud services
-    - [Cognito](https://aws.amazon.com/cognito/)
-    - [DynamoDB](https://www.dynamodbguide.com/)
+# Project Structure
+## Backend
+## Frontend
