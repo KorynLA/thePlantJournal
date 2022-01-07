@@ -40,4 +40,5 @@ Allows users to add and update plant data
      - Run: npm start
 # Project Structure
 ## Backend
+   - Uses serverless infrastructure
 ## Frontend
